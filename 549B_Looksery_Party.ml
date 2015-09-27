@@ -1,3 +1,7 @@
+open Printf
+open Scanf
+
+let rec fold i j f init = if i>j then init else fold (i+1) j f (f i init)
 let sum i j f = fold i j (fun i a -> (f i) + a) 0
 let read_int() = bscanf Scanning.stdib " %d " (fun x->x)
 let read_string() = bscanf Scanning.stdib " %s " (fun x->x)
